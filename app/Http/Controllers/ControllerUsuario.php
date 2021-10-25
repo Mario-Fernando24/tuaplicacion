@@ -11,10 +11,10 @@ class ControllerUsuario extends Controller
 {
     public function index(Request $request) 
     {
-        $usuarios = Usuario::get();
+        $usuarios = Usuario::with('adicion')->get();
         return response()->json(['status' => true,'usuario'=> $usuarios], 200);
     }
-
+    
 
     public function store(Request $request)
     {

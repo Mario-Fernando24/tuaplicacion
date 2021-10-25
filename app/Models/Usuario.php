@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\AdicionaUsuario;
 
 class Usuario extends Model
 {
@@ -18,6 +19,13 @@ class Usuario extends Model
         'address'
 
     ];
+
+    public function adicion()
+    {
+        return $this->belongsTo(AdicionaUsuario::class,'id','id_user');
+        
+    }
+
 
 
 }
